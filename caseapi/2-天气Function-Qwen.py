@@ -33,7 +33,7 @@ def get_response(messages):
         response = dashscope.Generation.call(
             model='qwen-max',
             messages=messages,
-            functions=functions,
+            functions=functions_getweather,
             result_format='message'
         )
         return response
@@ -86,7 +86,7 @@ def run_conversation():
     return message
 
 # 这个地方的description，我先用的英文，你可以动手改成中文试试
-functions = [
+functions_getweather = [
     {
       'name': 'get_current_weather',
       'description': 'Get the current weather in a given location.',
